@@ -15,7 +15,7 @@ double maxPieSize(int radii[], int n, int f)
     }
     high /= (f + 1);
     double eps = 1e-6;
-    while (high - low > eps)
+    while ((high - low) > eps)
     {
         double mid = (low + high) / 2;
         int count = 0;
