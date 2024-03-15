@@ -36,28 +36,49 @@ int main()
             }
         }
 
+        bool isSymetric = true;
+
+        for (int i = 0; i < size; i++)
+        {
+            if (isSymetric)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    compareMatrix[i][j] = originalMatrix[size - i - 1][size - j - 1];
+                    if (originalMatrix[i][j] != originalMatrix[size - i - 1][size - j - 1])
+                    {
+                        isSymetric = false;
+                        break;
+                    }
+                }
+            }
+        }
+
         // save transposed version
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                // need to change this
-                compareMatrix[i][j] = originalMatrix[size - i - 1][size - j - 1];
-            }
-        }
+        // for (int i = 0; i < size; i++)
+        // {
+        //     for (int j = 0; j < size; j++)
+        //     {
+        //         // need to change this
+        //         compareMatrix[i][j] = originalMatrix[size - i - 1][size - j - 1];
+        //     }
+        // }
 
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                cout << compareMatrix[i][j] << " ";
-            }
-            cout << endl;
-        }
+        // print compare matrix
+        // for (int i = 0; i < size; i++)
+        // {
+        //     for (int j = 0; j < size; j++)
+        //     {
+        //         cout << compareMatrix[i][j] << " ";
+        //     }
+        //     cout << endl;
+        // }
         // compare vector equality
-        bool is_equal = equal(originalMatrix.begin(), originalMatrix.end(), compareMatrix.begin());
+        // bool is_equal = equal(originalMatrix.begin(), originalMatrix.end(), compareMatrix.begin());
 
-        (is_equal) ? cout << "Symetric" << endl : cout << "Non-symetric" << endl;
+        // (is_equal) ? cout << "Symetric" << endl : cout << "Non-symetric" << endl;
+
+        (isSymetric) ? cout << "Symetric" << endl : cout << "Non-symetric" << endl;
     }
 
     return 0;
