@@ -15,7 +15,7 @@ int main()
         cin >> size;
 
         vector<vector<int>> originalMatrix(size, vector<int>(size));
-        vector<vector<int>> compareMatrix(size, vector<int>(size));
+        // vector<vector<int>> compareMatrix(size, vector<int>(size));
 
         // populate original array
         for (int i = 0; i < size; i++)
@@ -30,13 +30,13 @@ int main()
 
         bool isSymetric = true;
 
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size / 2; i++)
         {
             if (isSymetric)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    compareMatrix[i][j] = originalMatrix[size - i - 1][size - j - 1];
+                    // compareMatrix[i][j] = originalMatrix[size - i - 1][size - j - 1];
                     if (originalMatrix[i][j] != originalMatrix[size - i - 1][size - j - 1])
                     {
                         isSymetric = false;
