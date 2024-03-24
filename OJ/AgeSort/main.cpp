@@ -1,7 +1,7 @@
 #include <iostream>
-#include <vector>
-// #include <queue>
-// #include <algorithm>
+// #include <vector>
+//  #include <queue>
+//  #include <algorithm>
 
 using namespace std;
 
@@ -14,7 +14,8 @@ int main()
     cin >> people;
     while (people != 0)
     {
-        vector<int> ages(101, 0);
+        // vector<int> ages(101, 0);
+        int ages[101]{};
         for (int i = 0; i < people; i++)
         {
             int age;
